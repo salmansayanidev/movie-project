@@ -1,16 +1,22 @@
-import { useState, useEffect } from 'react'
+// import { useState, useEffect } from 'react'
 import './App.css'
+import Home from './screens/home'
+import Header from './components/Header'
+import {  Route, Routes, } from 'react-router-dom';
 // import api from './api/'
-import TrendingMovies from './components/Trending-Movie';
 
 
 function App() {
+
   
   return (
     <>
-      <TrendingMovies />
+      <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
     </>
   )
 }
 
-export default App
+export default App;
