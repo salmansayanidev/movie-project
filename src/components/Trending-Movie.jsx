@@ -54,7 +54,7 @@ const TrendingMovies = () => {
   }, [period]);
 
 
-
+  
   return (
     <>  
         <section className='trend-movies-sec'>
@@ -105,7 +105,7 @@ const TrendingMovies = () => {
                                         <SwiperSlide>
                                             <a className='text-dec-none' href="#">
                                                 <div className="trending-movies-card">
-                                                    <img className='trend-movie-img img-fluid' src={data.poster_path} alt="" />
+                                                    <img className='trend-movie-img img-fluid' src={TrendMoviesImg} alt="" />
                                                     <h1 className='trendmovie-title'>{data.title}{data.name}</h1>
                                                     <p className='release-date'>{data.release_date}{data.first_air_date}</p>
                                                 </div>
