@@ -47,10 +47,33 @@ html {
   text-transform: capitalize;
   color: white;
   font-family: var(--fonts-family);
-  font-weight: 500;
+  font-weight: 400;
   font-size: 20px;
   transition: 0.5s;
   margin-right: 28px;
+}
+button.links.btn.btn-secondary.dropdown-toggle {
+  background-color: transparent;
+  border: none;
+  text-transform: capitalize;
+  color: white;
+  font-family: var(--fonts-family);
+  font-weight: 400;
+  font-size: 20px;
+  transition: 0.5s;
+  margin-right: 0 28px 0 0;
+  padding: 0;
+}
+.dropdown-toggle::after {
+    display: inline-block;
+    margin-left: 0.255em;
+    vertical-align: 0.255em;
+    content: "";
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
+    display: none !important;
 }
 .links:hover {
   font-weight: 500;
@@ -114,10 +137,10 @@ h1.trendmovie-title {
 .trend-movies-sec-title {
   font-size: 40px;
   font-family: var(--fonts-family);
-  font-weight: 700;
+  font-weight: 600;
   color: black;
   text-transform: capitalize;
-  margin-right: 20px;
+  margin: 30px 30px 30px 0;
 }
 
 .tab-btn:hover {
@@ -186,4 +209,30 @@ h1.trendmovie-title {
 
 .active-content {
     display: flex;
+}
+
+.popularmovies a {
+  text-decoration: none;
+  background-color: white;
+  padding: 0 0 10px 0;
+  box-shadow: 1px -1px 10px 0px #0000008c;
+  margin-bottom: 20px;
+  border-radius: 10px ;
+  text-align: center;
+  width: 19%;
+}
+/* .popularmovie {
+  
+} */
+
+.popularmovie-img {
+  border-radius: 10px 10px 0 0;
+  margin-bottom: 10px;
+  aspect-ratio: 1/1.3;
+}
+
+.popularmovies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }

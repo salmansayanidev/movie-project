@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import api from '../api'
 import "bootstrap/dist/css/bootstrap.css"
-import TrendMoviesImg from '../images/trend-movies-img.jpg'
 import '../../src/index.css'
 
 
@@ -15,6 +14,7 @@ import 'swiper/css/pagination';
 
 // import required modules
 import {  Autoplay,Navigation, FreeMode } from 'swiper/modules';
+import { Link } from 'react-router-dom';
 
 
 
@@ -22,7 +22,7 @@ import {  Autoplay,Navigation, FreeMode } from 'swiper/modules';
 
 const TrendingMovies = () => {
 
-  const [datas, setDatas] = useState([])
+  const [trendMovies, setTrendMovies] = useState([])
   const [period , setPeriod] = useState('day')
   const [ToggleState, setToggleState] = useState(1);
 
@@ -41,9 +41,10 @@ const TrendingMovies = () => {
       const res = await api.get(`trending/all/${period}?language=en-US`)
       
       if ( res.status === 200 ){
-        setDatas(res.data.results)
+        setTrendMovies(res.data.results)
 
-      } 
+      }
+      
       
     }
 
@@ -59,7 +60,7 @@ const TrendingMovies = () => {
     <>  
         <section className='trend-movies-sec'>
             <div className="container">
-                <div className="row">
+                <div className="row justify-content-center">
                     <div className='col-12'>
                         <div className='d-flex align-items-center'>
                             <h1 className='trend-movies-sec-title'>trending</h1>
@@ -71,52 +72,51 @@ const TrendingMovies = () => {
                         <div id='trending-movies-cards' className={`content ${getActiveClass(1, "active-content")}`}>
 
                             <Swiper
-                                    slidesPerView={7}
-                                    spaceBetween={60}
-                                    breakpoints={{
-                                        360: {
+                                slidesPerView={6}
+                                spaceBetween={60}
+                                breakpoints={{
+                                    360: {
                                         slidesPerView: 1,
                                         spaceBetween: 20,
-                                        },
-                                        768: {
+                                    },
+                                    768: {
                                         slidesPerView: 2,
                                         spaceBetween: 40,
-                                        },
-                                        1920: {
-                                        slidesPerView: 7,
+                                    },
+                                    1920: {
+                                        slidesPerView: 6,
                                         spaceBetween: 10,
-                                        },
-                                    }}
-                                    autoplay={{
-                                        delay: 2500,
-                                        disableOnInteraction: false 
-                                    }}
-                                    loop={true}
-                                    navigation={{
-                                        nextEl:'.next-btn',
-                                        prevEl:'.pre-btn'
-                                    }}
-                                    freeMode={true}
-                                    modules={[Autoplay , Navigation , FreeMode]}
-                                        className="mySwiper"
-                                >
-                                {datas && datas.length ? (
-                                    datas.map( (data) => (
-                                        <SwiperSlide>
-                                            <a className='text-dec-none' href="#">
-                                                <div className="trending-movies-card">
-                                                    <img className='trend-movie-img img-fluid' src={TrendMoviesImg} alt="" />
-                                                    <h1 className='trendmovie-title'>{data.title}{data.name}</h1>
-                                                    <p className='release-date'>{data.release_date}{data.first_air_date}</p>
+                                    },
+                                }}
+                                autoplay={{
+                                    delay: 2500,
+                                    disableOnInteraction: false 
+                                }}
+                                loop={true}
+                                navigation={{
+                                    nextEl:'.next-btn',
+                                    prevEl:'.pre-btn'
+                                }}
+                                freeMode={true}
+                                modules={[Autoplay , Navigation , FreeMode]}
+                                className="mySwiper"
+                            >
+                                {trendMovies && trendMovies.length ? (
+                                    trendMovies.map( (trendMovie , index) => (
+                                        <SwiperSlide key={index}>
+                                            <Link className='text-dec-none' to={`/movie/${trendMovie.id}`}>
+                                                <div  className="trending-movies-card">
+                                                    <img className='trend-movie-img img-fluid' src={"https://image.tmdb.org/t/p/w500/"+trendMovie.poster_path} alt="" />
+                                                    <h1 className='trendmovie-title'>{trendMovie.title}{trendMovie.name}</h1>
+                                                    <p className='release-date'>{trendMovie.release_date}{trendMovie.first_air_date}</p>
                                                 </div>
-                                            </a>
+                                            </Link>
                                         </SwiperSlide>
                                     ))
                                     ) : (
-                                    null
+                                        <p>plaese wait</p>
                                 )} 
                             </Swiper>
-  
                         </div>
                     </div>
                 </div>
