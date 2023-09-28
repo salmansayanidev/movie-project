@@ -8,7 +8,7 @@ import '../../src/index.css'
 const SingleMovie = () => {
 
     const [singleMovie, setSingleMovie] = useState([]);
-    const { product } = useParams();
+    const { id } = useParams();
 
 
 
@@ -16,7 +16,7 @@ const SingleMovie = () => {
     useEffect(() => {
 
         const getPopularMovies = async () => {
-            const res = await api.get(`/movie/${product}?language=en-US`)
+            const res = await api.get(`/movie/${id}?language=en-US`)
 
             if (res.status === 200) {
                 setSingleMovie(res.data.results)
