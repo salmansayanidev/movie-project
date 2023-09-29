@@ -10,9 +10,6 @@ const SingleMovie = () => {
     const [singleMovie, setSingleMovie] = useState([]);
     const { id } = useParams();
 
-
-
-
     useEffect(() => {
 
         const getPopularMovies = async () => {
@@ -20,6 +17,7 @@ const SingleMovie = () => {
 
             if (res.status === 200) {
                 setSingleMovie(res.data.results)
+                console.log(res)
 
             }
         }
@@ -39,18 +37,18 @@ const SingleMovie = () => {
                         <div className='col-11'>
                             <div className="row">
                                 <div className='popularmovies'>
-                                    {singleMovie  && singleMovie.length ? (
+                                    {singleMovie && singleMovie.length ? (
                                         singleMovie.map( (singMovie) => (
                                             <a href="#">
                                                 <div key={singMovie} className='popularmovie'>
-                                                    <img className='img-fluid popularmovie-img' src={"https://image.tmdb.org/t/p/w500/"+singMovie.poster_path} alt="" />
-                                                    <h1 className='trendmovie-title'>{singMovie.title}</h1>
-                                                    <p className='release-date'>{singMovie.vote_average}</p>
+                                                    <img className='img-fluid popularmovie-img' src={"https://image.tmdb.org/t/p/w500/" +singMovie.poster_path} alt="" />
+                                                    <h1 className='trendmovie-title'>{singMovie.homepage}</h1>
+                                                    <p className='release-date'>{singMovie.overview}</p>
                                                 </div>
                                             </a>
                                         ))
                                         ) : (
-                                        <p>plaese wait</p>
+                                        <p className='mb-0'>plaese wait....</p>
                                     )}
                                 </div>
                             </div>

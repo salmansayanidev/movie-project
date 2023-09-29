@@ -42,23 +42,68 @@ const Header = () => {
                                             <li>
                                                 <Link className="dropdown-item" to='/movie/top-rated'>Top Rated</Link>                                                
                                             </li>
-                                            {/* <li><a class="dropdown-item" href="#">Now Playing</a></li> */}
-                                            {/* <li><a class="dropdown-item" href="#">Upcoming</a></li> */}
-                                            {/* <li><a class="dropdown-item" href="#">Upcoming</a></li> */}
                                         </ul>
                                     </div>
                                 </li>
                                 <li>
-                                     {/* <a className="links" href="#">TV Shows</a> */}
-                                    <Link to="/movie" className="links">TV Shows</Link>
+                                    <div className="dropdown">
+                                        <button className="links btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            TV Shows
+                                        </button>
+                                        <ul className="dropdown-menu">
+                                            <li>
+                                                <Link className="dropdown-item" to='/movie'>Airing Today</Link>                                                
+                                            </li>
+                                            <li>
+                                                <Link className="dropdown-item" to='/movie/now-playing'>On The Air</Link>                                                
+                                            </li>
+                                            <li>
+                                                <Link className="dropdown-item" to='/movie/upcoming'>Popular</Link>                                                
+                                            </li>
+                                            <li>
+                                                <Link className="dropdown-item" to='/movie/top-rated'>Top Rated</Link>                                                
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    {/* <a className="links" href="#">TV Shows</a>
+                                    <Link to="/movie" className="links">TV Shows</Link> */}
                                 </li>
                                 <li>
-                                    {/* <a className="links" href="#">People</a> */}
-                                    <Link to="/movie" className="links">People</Link>
+                                    <div className="dropdown">
+                                        <button className="links btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            People
+                                        </button>
+                                        <ul className="dropdown-menu">
+                                            <li>
+                                                <Link className="dropdown-item" to='/movie'>Popular People</Link>                                                
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    {/* <a className="links" href="#">People</a>
+                                    <Link to="/movie" className="links">People</Link> */}
                                 </li>
                                 <li>
-                                    {/* <a className="links" href="#">More</a> */}
-                                    <Link to="/movie" className="links">More</Link>
+                                    <div className="dropdown">
+                                        <button className="links btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            More
+                                        </button>
+                                        <ul className="dropdown-menu">
+                                            <li>
+                                                <Link className="dropdown-item" to='/movie'>Discussions</Link>                                                
+                                            </li>
+                                            <li>
+                                                <Link className="dropdown-item" to='/movie/now-playing'>Leaderboard</Link>                                                
+                                            </li>
+                                            <li>
+                                                <Link className="dropdown-item" to='/movie/upcoming'>Support</Link>                                                
+                                            </li>
+                                            <li>
+                                                <Link className="dropdown-item" to='/movie/top-rated'>API</Link>                                                
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    {/* <a className="links" href="#">More</a>
+                                    <Link to="/movie" className="links">More</Link> */}
                                 </li>
                             </ul>
                         </nav>

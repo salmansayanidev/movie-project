@@ -9,6 +9,8 @@
 :root {
   --fonts-family: 'Poppins', sans-serif;
   --tmdbDarkBlue: 3,37,65;
+  --tmdbLightGreen: 30,213,169;
+  --tmdbLightBlue: 1,180,228;
 }
 
 body {
@@ -40,7 +42,7 @@ html {
 }
 .logo img {
   width: 100%;
-  max-width: 154px;
+  max-width: 200px;
 }
 .links {
   text-decoration: none;
@@ -102,11 +104,26 @@ button.links.btn.btn-secondary.dropdown-toggle {
 }
 .banner-input {
   width: 100%;
-  padding: 15px;
-  background-color: white;
+  background-color: transparent;
   border: none;
   outline: none;
+  padding: 10px 0 10px 15px;
+}
+.banner-search-area {
+  display: flex;
+  background: white;
   border-radius: 50px;
+}
+button.banner-btn {
+  background: linear-gradient(to right,rgba(var(--tmdbLightGreen),1) 0%,rgba(var(--tmdbLightBlue),1) 100%);
+  border: none;
+  color: white;
+  padding: 0px 20px;
+  font-size: 20px;
+  text-transform: capitalize;
+  border-radius: 50px;
+  font-family: var(--fonts-family);
+  font-weight: 500;
 }
 .banner-input::placeholder {
   font-size: 20px;
@@ -114,11 +131,12 @@ button.links.btn.btn-secondary.dropdown-toggle {
   font-weight: 400
 }
 h1.trendmovie-title {
-  font-size: 16px;
+  font-size: 13px;
   font-family: var(--fonts-family);
   font-weight: 700;
   color: black;
   margin-bottom: 0;
+  margin-top: 20px;
 }
 .release-date {
   font-size: 12px;
@@ -132,7 +150,7 @@ h1.trendmovie-title {
 
 }
 .trend-movies-sec {
-  padding: 40px 0;
+  padding: 10px 0;
 }
 .trend-movies-sec-title {
   font-size: 40px;
@@ -151,23 +169,6 @@ h1.trendmovie-title {
 .text-dec-none {
   text-decoration: none;
 }
-
-/* .trending-movies-cards {
-    display: flex;
-    overflow-x: auto;
-} */
-
-/* .trending-movies-card {
-  width: 100%;
-  max-width: 240px;
-} */
-
-/* .trend-movie-img {
-  width: 100%;
-} */
-
-
-
 
 .tabs {
   position: relative;
@@ -221,9 +222,6 @@ h1.trendmovie-title {
   text-align: center;
   width: 19%;
 }
-/* .popularmovie {
-  
-} */
 
 .popularmovie-img {
   border-radius: 10px 10px 0 0;
@@ -235,4 +233,39 @@ h1.trendmovie-title {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+}
+.abc {
+  width: 36px;
+  height: 34px;
+  position: absolute;
+  bottom: 19.5%;
+  left: 12%;
+  background-color: black;
+  border-radius: 100%;
+}
+
+.CircularProgressbar .CircularProgressbar-text {
+  fill: white !important;
+  font-size: 23px !important;
+  text-anchor: middle !important;
+  font-family: var(--fonts-family);
+  font-weight: 700;
+}
+.trending-movies-cards {
+  position: relative;
+}
+.CircularProgressbar .CircularProgressbar-trail {
+  stroke: transparent !important;
+  stroke-linecap: round;
+}
+.CircularProgressbar .CircularProgressbar-path {
+  stroke: yellow !important;
+  opacity: 80% !important;
+  stroke-linecap: round;
+  -webkit-transition: stroke-dashoffset 0.5s ease 0s;
+  transition: stroke-dashoffset 0.5s ease 0s;
+}
+
+.popularmovies a {
+  position: relative;
 }

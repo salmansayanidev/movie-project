@@ -4,6 +4,7 @@ import "../index.css"
 
 
 const Banner = () => {
+    
     return (
         <>
             <section className="banner">
@@ -13,7 +14,10 @@ const Banner = () => {
                             <div className="banner-content">
                                 <h1 className="banner-title">Welcome.</h1>
                                 <h3 className="banner-sb-title">Millions of movies, TV shows and people to discover. Explore now.</h3>
-                                <input type="search" className="banner-input" name="" id="" placeholder="Search for a movie, tv show, person"/>
+                                <form className="banner-search-area">
+                                    <input type="search" className="banner-input" name="" id="" placeholder="Search for a movie, tv show, person"/>
+                                    <button className="banner-btn">search</button>
+                                </form>
                             </div>
                         </div>
                     </div>
