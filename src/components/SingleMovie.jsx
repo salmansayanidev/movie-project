@@ -16,7 +16,7 @@ const SingleMovie = () => {
             const res = await api.get(`/movie/${id}?language=en-US`)
 
             if (res.status === 200) {
-                setSingleMovie(res.data.results)
+                setSingleMovie(res.data)
                 console.log(res)
 
             }
@@ -32,12 +32,13 @@ const SingleMovie = () => {
                 <div className='container'>
                     <div className='row justify-content-center'>
                         <div className='col-11'>
-                            <h2 className='trend-movies-sec-title'>salman</h2>
+                            <h2 className='trend-movies-sec-title'>single movie</h2>
                         </div>
                         <div className='col-11'>
                             <div className="row">
                                 <div className='popularmovies'>
-                                    {singleMovie && singleMovie.length ? (
+                                    <img className='img-fluid popularmovie-img' src={"https://image.tmdb.org/t/p/w500/" +singleMovie.poster_path} alt="" />
+                                    {/* {singleMovie && singleMovie.length ? (
                                         singleMovie.map( (singMovie) => (
                                             <a href="#">
                                                 <div key={singMovie} className='popularmovie'>
@@ -49,7 +50,7 @@ const SingleMovie = () => {
                                         ))
                                         ) : (
                                         <p className='mb-0'>plaese wait....</p>
-                                    )}
+                                    )} */}
                                 </div>
                             </div>
                         </div> 

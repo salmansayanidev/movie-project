@@ -75,7 +75,7 @@ const Header = () => {
                                         </button>
                                         <ul className="dropdown-menu">
                                             <li>
-                                                <Link className="dropdown-item" to='/movie'>Popular People</Link>                                                
+                                                <Link className="dropdown-item" to='/person'>Popular People</Link>                                                
                                             </li>
                                         </ul>
                                     </div>

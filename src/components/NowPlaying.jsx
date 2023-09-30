@@ -27,7 +27,7 @@ const NowPlaying = () => {
                 }
             }
             getMovies();
-        }, 2500)
+        }, 1500)
 
     }, []);
 

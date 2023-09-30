@@ -27,7 +27,7 @@ const TopRatedMovies = () => {
                 }
             }
             getMovies();
-        },2500)
+        },1500)
 
     }, []);
 

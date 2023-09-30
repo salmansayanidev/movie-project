@@ -8,6 +8,8 @@ import PopularMovies from './components/PopularMovies'
 import NowPlaying from './components/NowPlaying';
 import UpcomingMovies from './components/UpcomingMovies';
 import TopRatedMovies from './components/TopRatedMovies';
+import PopularPerson from './components/PopularPerson';
+import SinglePerson from './components/SinglePerson';
 
 // import api from './api/'
 
@@ -25,6 +27,8 @@ function App() {
           <Route path="/movie/upcoming" element={<UpcomingMovies />} />
           <Route path="/movie/top-rated" element={<TopRatedMovies />} />
           <Route path='/movie/:id' element={<SingleMovie />} />
+          <Route path='/person' element={<PopularPerson />} />
+          <Route path='/person/:id' element={<SinglePerson />} />
         </Routes>
     </>
   )

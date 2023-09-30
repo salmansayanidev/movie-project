@@ -34,7 +34,7 @@ const PopularMovies = () => {
             }
             getPopularMovies();
 
-        }, 2500)
+        }, 1500)
 
     }, []);
 

@@ -26,7 +26,7 @@ const UpcomingMovies = () => {
                 }
             }
             getMovies();
-        }, 2500)
+        }, 1500)
 
     }, []);
 

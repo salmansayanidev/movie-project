@@ -56,7 +56,7 @@ const TrendingMovies = () => {
       
           getMovies()
 
-    }, 2500)
+    }, 1500)
 
   }, [period]);
 
@@ -103,10 +103,10 @@ const TrendingMovies = () => {
                                             spaceBetween: 10,
                                         },
                                     }}
-                                    // autoplay={{
-                                    //     delay: 2500,
-                                    //     disableOnInteraction: false 
-                                    // }}
+                                    autoplay={{
+                                        delay: 2500,
+                                        disableOnInteraction: false 
+                                    }}
                                     loop={true}
                                     navigation={{
                                         nextEl:'.next-btn',
