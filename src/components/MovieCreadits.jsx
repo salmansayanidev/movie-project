@@ -14,6 +14,7 @@ import 'swiper/css/pagination';
 
 // import required modules
 import {  Autoplay,Navigation, FreeMode } from 'swiper/modules';
+import MoviesPopup from './MoviesPopup';
 
 const SingleCreaditsMovies = () => {
     const [openDetail, setOpenDetail] = useState(false)
@@ -104,30 +105,12 @@ const SingleCreaditsMovies = () => {
                                 </div>
                                 <div className='mr-15px'>
                                     {openDetail ===  singleCreaditsMovie.id ? (
-                                        <div key={index} className='row'>
-                                        <div className='col-9'>
-                                            <div className='movies-popup'>
-                                                <div className="row">
-                                                    <div className="col-2">
-                                                        <div className='popup-leftarea'>
-                                                            <img className='img-fluid popularmovie-img' src={"https://image.tmdb.org/t/p/w500/" +singleCreaditsMovie.poster_path} alt="" />
-                                                        </div>
-                                                    </div>
-                                                    <div className='col-10'>
-                                                        <div className='popup-rightarea'>
-                                                            <div className='d-flex align-items-center justify-content-between mb-2'>
-                                                                <h2 className='mb-0'>{singleCreaditsMovie.title}{singleCreaditsMovie.original_name}</h2>
-                                                                <span>{singleCreaditsMovie.vote_average}</span>
-                                                            </div>
-                                                            <p>{singleCreaditsMovie.overview}</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                        </div>
+                                        <MoviesPopup img={singleCreaditsMovie.poster_path} title={singleCreaditsMovie.title} 
+                                        overview={singleCreaditsMovie.overview} 
+                                        vote={singleCreaditsMovie.vote_average} 
+                                        name={singleCreaditsMovie.original_name} 
+                                        id={singleCreaditsMovie.id}/>
                                     ) : ""}
-                                     
                                     <span className='circle-img' onClick={() => openDetailMovies(singleCreaditsMovie.id)}></span>
                                 </div>
                                 <div className='mr-15px'>
