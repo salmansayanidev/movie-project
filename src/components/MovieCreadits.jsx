@@ -16,17 +16,18 @@ import 'swiper/css/pagination';
 import {  Autoplay,Navigation, FreeMode } from 'swiper/modules';
 
 const SingleCreaditsMovies = () => {
-
+    const [openDetail, setOpenDetail] = useState(false)
     const [singleCreaditsMovies, setSingleCreaditsMovies] = useState([]);
     const { id } = useParams();
 
     useEffect(() => {
 
         const getSingleCreadits = async () => {
-            const res = await api.get(`/person/${id}/combined_credits`)
+            const res = await api.get(`/person/${id}/combined_credits?language=en-US`)
 
             if (res.status === 200) {
                 setSingleCreaditsMovies(res.data)
+                console.log(singleCreaditsMovies)
                 
             }
         }
@@ -34,6 +35,10 @@ const SingleCreaditsMovies = () => {
 
     }, []);
 
+    const openDetailMovies = (id) => {
+        setOpenDetail((prevId) => (prevId === id ? null : id));
+      };
+   
 
     return (
         <>
@@ -41,52 +46,107 @@ const SingleCreaditsMovies = () => {
                 <h2 className='bio'>Known For</h2>
                 <div className='popularpeople'>
 
-                <Swiper 
-                    slidesPerView={5}
-                    spaceBetween={60}
-                    breakpoints={{
-                        360: {
-                            slidesPerView: 1,
-                            spaceBetween: 20,
-                        },
-                        768: {
-                            slidesPerView: 2,
-                            spaceBetween: 40,
-                        },
-                        1920: {
-                            slidesPerView: 5,
-                            spaceBetween: 10,
-                        },
-                    }}
-                    autoplay={{
-                        delay: 2000,
-                        disableOnInteraction: false 
-                    }}
-                    loop={true}
-                    navigation={{
-                        nextEl:'.next-btn',
-                        prevEl:'.pre-btn'
-                    }}
-                    freeMode={true}
-                    modules={[Autoplay , Navigation , FreeMode]}
-                    className="mySwiper"
-                >
-                    {singleCreaditsMovies.cast &&
-                        singleCreaditsMovies.cast.map((singleCreaditsMovie , index) => {
-                            return (
-                            <SwiperSlide key={index}>
-                                <Link className='creadits-movie' to={`/movie/${singleCreaditsMovie.id}`}>
-                                    <img className='img-fluid popularpeople-img' src={singleCreaditsMovie.poster_path ?  "https://image.tmdb.org/t/p/w500/" +singleCreaditsMovie.poster_path : 'https://www.themoviedb.org/t/p/w300_and_h450_bestv2/jElpCJkSaRPYwIMwZY28gOKV7BK.jpg' } alt="" />
-                                    <p>{singleCreaditsMovie.character}</p>
-                                </Link>
-                            </SwiperSlide>
-                        );
-                    })}
-                </Swiper>
+                    <Swiper 
+                        slidesPerView={5}
+                        spaceBetween={60}
+                        breakpoints={{
+                            360: {
+                                slidesPerView: 1,
+                                spaceBetween: 20,
+                            },
+                            768: {
+                                slidesPerView: 2,
+                                spaceBetween: 40,
+                            },
+                            1920: {
+                                slidesPerView: 5,
+                                spaceBetween: 10,
+                            },
+                        }}
+                        // autoplay={{
+                        //     delay: 2000,
+                        //     disableOnInteraction: false 
+                        // }}
+                        loop={true}
+                        navigation={{
+                            nextEl:'.next-btn',
+                            prevEl:'.pre-btn'
+                        }}
+                        freeMode={true}
+                        modules={[Autoplay , Navigation , FreeMode]}
+                        className="mySwiper"
+                    >
+                        {singleCreaditsMovies.cast &&
+                            singleCreaditsMovies.cast.map((singleCreaditsMovie , index) => {
+                                return (
+                                <SwiperSlide key={index}>
+                                    <Link className='creadits-movie' to={`/movie/${singleCreaditsMovie.id}`}>
+                                        <img className='img-fluid popularpeople-img' src={singleCreaditsMovie.poster_path ?  "https://image.tmdb.org/t/p/w500/" +singleCreaditsMovie.poster_path : 'https://www.themoviedb.org/t/p/w300_and_h450_bestv2/jElpCJkSaRPYwIMwZY28gOKV7BK.jpg' } alt="" />
+                                        <p>{singleCreaditsMovie.title}{singleCreaditsMovie.original_name}</p>
+                                    </Link>
+                                </SwiperSlide>
+                            );
+                        })}
+                    </Swiper>
                 </div>
             </div>
+            <div className='col-12'>
+                <h2 className='bio'>Acting</h2>
+            </div>
+            <div className='col-12'>
+                <div className='acting-lists'>
+                    {singleCreaditsMovies.cast &&
+                        singleCreaditsMovies.cast.map((singleCreaditsMovie , index) => {
+                        return (
+                            <div key={index} className='acting-list'>
+                                <div className='mr-15px'>
+                                    <p className='mb-0'>{singleCreaditsMovie.release_date}{singleCreaditsMovie.first_air_date}</p>
+                                </div>
+                                <div className='mr-15px'>
+                                    {openDetail ===  singleCreaditsMovie.id ? (
+                                        <div key={index} className='row'>
+                                        <div className='col-9'>
+                                            <div className='movies-popup'>
+                                                <div className="row">
+                                                    <div className="col-2">
+                                                        <div className='popup-leftarea'>
+                                                            <img className='img-fluid popularmovie-img' src={"https://image.tmdb.org/t/p/w500/" +singleCreaditsMovie.poster_path} alt="" />
+                                                        </div>
+                                                    </div>
+                                                    <div className='col-10'>
+                                                        <div className='popup-rightarea'>
+                                                            <div className='d-flex align-items-center justify-content-between mb-2'>
+                                                                <h2 className='mb-0'>{singleCreaditsMovie.title}{singleCreaditsMovie.original_name}</h2>
+                                                                <span>{singleCreaditsMovie.vote_average}</span>
+                                                            </div>
+                                                            <p>{singleCreaditsMovie.overview}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                        </div>
+                                    ) : ""}
+                                     
+                                    <span className='circle-img' onClick={() => openDetailMovies(singleCreaditsMovie.id)}></span>
+                                </div>
+                                <div className='mr-15px'>
+                                    <h2 className='mb-0'>{singleCreaditsMovie.title}{singleCreaditsMovie.original_name}</h2>
+                                    <p className='mb-0'>as {singleCreaditsMovie.character}</p>
+                                </div>
+                            </div>
+                        );
+                    })}
+                </div>
+            </div>
+              
+            
         </>
     )
 }
 
 export default SingleCreaditsMovies;
+
+
+
+ 

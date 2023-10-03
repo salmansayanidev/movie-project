@@ -12,7 +12,6 @@ import 'react-circular-progressbar/dist/styles.css';
 const PopularMovies = () => {
 
     const [popularMovies, setPopularMovies] = useState([]);
-    const [done, setDone] = useState(undefined);
     // const [displayedProducts, setDisplayedProducts] = useState([])
     // const [visibleProducts, setvisibleProducts] = useState(20)
     // const [productTotal, setproductTotal] = useState(0)
@@ -22,19 +21,16 @@ const PopularMovies = () => {
 
     useEffect(() => {
 
-        setTimeout(() => {
             const getPopularMovies = async () => {
                 const res = await api.get(`/movie/popular?language=en-US&page=1`)
     
                 if (res.status === 200) {
                     setPopularMovies(res.data.results)
-                    setDone(true);
     
                 }
             }
             getPopularMovies();
 
-        }, 1500)
 
     }, []);
 
@@ -46,15 +42,6 @@ const PopularMovies = () => {
                         <div className='col-12'>
                             <h2 className='trend-movies-sec-title'>popular movies</h2>
                         </div>
-                        {!done ? (
-                            <div className="row justify-content-center align-items-center">
-                                <div className="col-3">
-                                    <div className={"item"}>
-                                        <Loader type="spinner-circle" bgColor={"black"} color={'black'} size={100} />
-                                    </div>
-                                </div>
-                            </div>
-                        ) : (
                         <div className='col-12'>
                             <div className="row">
                                 <div  className='popularmovies'>
@@ -83,8 +70,6 @@ const PopularMovies = () => {
                                 </div>
                             </div>
                         </div>
-                        
-                    )}
                     </div>
                 </div>
             </section>

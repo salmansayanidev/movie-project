@@ -38,19 +38,6 @@ const SingleMovie = () => {
                             <div className="row">
                                 <div className='popularmovies'>
                                     <img className='img-fluid popularmovie-img' src={"https://image.tmdb.org/t/p/w500/" +singleMovie.poster_path} alt="" />
-                                    {/* {singleMovie && singleMovie.length ? (
-                                        singleMovie.map( (singMovie) => (
-                                            <a href="#">
-                                                <div key={singMovie} className='popularmovie'>
-                                                    <img className='img-fluid popularmovie-img' src={"https://image.tmdb.org/t/p/w500/" +singMovie.poster_path} alt="" />
-                                                    <h1 className='trendmovie-title'>{singMovie.homepage}</h1>
-                                                    <p className='release-date'>{singMovie.overview}</p>
-                                                </div>
-                                            </a>
-                                        ))
-                                        ) : (
-                                        <p className='mb-0'>plaese wait....</p>
-                                    )} */}
                                 </div>
                             </div>
                         </div> 
