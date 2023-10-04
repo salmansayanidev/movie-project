@@ -10,6 +10,8 @@ import UpcomingMovies from './components/UpcomingMovies';
 import TopRatedMovies from './components/TopRatedMovies';
 import PopularPerson from './components/PopularPerson';
 import SinglePerson from './components/SinglePerson';
+import AiringToday from './components/AiringToday';
+import OnTheAir from './components/OnTheAir';
 
 // import api from './api/'
 
@@ -29,6 +31,8 @@ function App() {
           <Route path='/movie/:id' element={<SingleMovie />} />
           <Route path='/person' element={<PopularPerson />} />
           <Route path='/person/:id' element={<SinglePerson />} />
+          <Route path='/tv/airing-today' element={<AiringToday />} />
+          <Route path='/tv/on-the-air' element={<OnTheAir />} />
         </Routes>
     </>
   )

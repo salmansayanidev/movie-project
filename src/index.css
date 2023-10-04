@@ -353,12 +353,16 @@ p.biography-para {
 }
 .movies-popup {
   background-color: rgba(var(--tmdbDarkBlue),1);
-  padding: 10px;
-  max-height: 155px;
+  padding: 20px 10px;
   margin-top: 10px;
   overflow-y: auto;
   overflow-x: hidden;
   border-radius: 10px;
+  position: absolute;
+  top: -193px;
+  left: -157px;
+  width: 554px;
+  z-index: 999999;
 }
 .popup-rightarea h2 {
   font-family: var(--fonts-family);
@@ -371,6 +375,9 @@ p.biography-para {
   font-family: var(--fonts-family);
   font-weight: 500;
   font-size: 12px;
+  height: 86px;
+  overflow-y: auto;
+  margin-bottom: 0;
 }
 .popup-rightarea span {
   font-family: var(--fonts-family);
@@ -383,4 +390,33 @@ p.biography-para {
 }
 .popup-leftarea img {
   border-radius: 10px;
+  aspect-ratio: 1/1.4;
+  object-fit: cover;
+}
+
+
+.popup-rightarea p::-webkit-scrollbar {
+  width: 0.09em;
+}
+ 
+.popup-rightarea p::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+ 
+.popup-rightarea p::-webkit-scrollbar-thumb {
+  background-color: white;
+  outline: 1px solid white;
+}
+.w-82px {
+  width: 82px;
+  text-align: center;
+}
+.popup-leftarea {
+  background-color: gray;
+  aspect-ratio: 1/1.4;
+  border-radius: 10px;
+  background-image: url(./images/glyphicons-basic-38-picture-grey-c2ebdbb057f2a7614185931650f8cee23fa137b93812ccb132b9df511df1cfac.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }

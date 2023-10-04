@@ -52,10 +52,10 @@ const Header = () => {
                                         </button>
                                         <ul className="dropdown-menu">
                                             <li>
-                                                <Link className="dropdown-item" to='/movie'>Airing Today</Link>                                                
+                                                <Link className="dropdown-item" to='/tv/airing-today'>Airing Today</Link>                                                
                                             </li>
                                             <li>
-                                                <Link className="dropdown-item" to='/movie/now-playing'>On The Air</Link>                                                
+                                                <Link className="dropdown-item" to='/tv/on-the-air'>On Tv</Link>                                                
                                             </li>
                                             <li>
                                                 <Link className="dropdown-item" to='/movie/upcoming'>Popular</Link>                                                

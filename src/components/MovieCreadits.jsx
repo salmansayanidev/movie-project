@@ -99,19 +99,21 @@ const SingleCreaditsMovies = () => {
                     {singleCreaditsMovies.cast &&
                         singleCreaditsMovies.cast.map((singleCreaditsMovie , index) => {
                         return (
-                            <div key={index} className='acting-list'>
+                            <div key={index} className='acting-list  position-relative'>
                                 <div className='mr-15px'>
-                                    <p className='mb-0'>{singleCreaditsMovie.release_date}{singleCreaditsMovie.first_air_date}</p>
+                                    <p className='mb-0 w-82px'>{singleCreaditsMovie.release_date || singleCreaditsMovie.first_air_date ? singleCreaditsMovie.release_date || singleCreaditsMovie.first_air_date : "_" }{}</p>
                                 </div>
                                 <div className='mr-15px'>
                                     {openDetail ===  singleCreaditsMovie.id ? (
-                                        <MoviesPopup img={singleCreaditsMovie.poster_path} title={singleCreaditsMovie.title} 
-                                        overview={singleCreaditsMovie.overview} 
-                                        vote={singleCreaditsMovie.vote_average} 
-                                        name={singleCreaditsMovie.original_name} 
-                                        id={singleCreaditsMovie.id}/>
-                                    ) : ""}
-                                    <span className='circle-img' onClick={() => openDetailMovies(singleCreaditsMovie.id)}></span>
+                                            <MoviesPopup 
+                                            img={singleCreaditsMovie.poster_path} 
+                                            title={singleCreaditsMovie.title} 
+                                            overview={singleCreaditsMovie.overview} 
+                                            vote={singleCreaditsMovie.vote_average} 
+                                            name={singleCreaditsMovie.original_name} 
+                                            id={singleCreaditsMovie.id}/>
+                                        ) : ""}
+                                        <span className='circle-img' onClick={() => openDetailMovies(singleCreaditsMovie.id)}></span>
                                 </div>
                                 <div className='mr-15px'>
                                     <h2 className='mb-0'>{singleCreaditsMovie.title}{singleCreaditsMovie.original_name}</h2>
