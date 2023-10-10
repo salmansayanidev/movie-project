@@ -58,10 +58,10 @@ const Header = () => {
                                                 <Link className="dropdown-item" to='/tv/on-the-air'>On Tv</Link>                                                
                                             </li>
                                             <li>
-                                                <Link className="dropdown-item" to='/movie/upcoming'>Popular</Link>                                                
+                                                <Link className="dropdown-item" to='/tv'>Popular</Link>                                                
                                             </li>
                                             <li>
-                                                <Link className="dropdown-item" to='/movie/top-rated'>Top Rated</Link>                                                
+                                                <Link className="dropdown-item" to='/tv/top-rated'>Top Rated</Link>                                                
                                             </li>
                                         </ul>
                                     </div>

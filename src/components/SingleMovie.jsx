@@ -34,7 +34,7 @@ const SingleMovie = () => {
                         <div className='col-11'>
                             <h2 className='trend-movies-sec-title'>single movie</h2>
                         </div>
-                        <div className='col-11'>
+                        <div className='col-4'>
                             <div className="row">
                                 <div className='popularmovies'>
                                     <img className='img-fluid popularmovie-img' src={"https://image.tmdb.org/t/p/w500/" +singleMovie.poster_path} alt="" />
