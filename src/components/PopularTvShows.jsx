@@ -12,20 +12,23 @@ import 'react-circular-progressbar/dist/styles.css';
 const PopularTvShows = () => {
 
     const [popularTvShows, setPopularTvShows] = useState([]);
-
+    const [page, setPage] = useState(1);
+    function pageControl (){
+        setPage(page + 1)
+    }
 
     useEffect(() => {
 
             const getPopularTvShows = async () => {
-                const res = await api.get(`/tv/popular?language=en-US&page=1`)
+                const res = await api.get(`/tv/popular?language=en-US&page=${page}`)
     
                 if (res.status === 200) {
-                    setPopularTvShows(res.data.results)
+                    setPopularTvShows([...popularTvShows , ...res.data.results])
                 }
             }
             getPopularTvShows();
 
-    }, []);
+    }, [page]);
 
 
     return (
@@ -59,6 +62,11 @@ const PopularTvShows = () => {
                                     )}
 
                                 </div>
+                            </div>
+                        </div>
+                        <div className='col-12'>
+                            <div className='load-more-btn'>
+                                <button type='button' onClick={() => pageControl()}>Load More</button>
                             </div>
                         </div>
                     </div>

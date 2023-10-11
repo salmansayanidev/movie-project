@@ -12,19 +12,23 @@ import 'react-circular-progressbar/dist/styles.css';
 const UpcomingMovies = () => {
 
     const [UpcomingMovies, setUpcomingMovies] = useState([]);
+    const [page, setPage] = useState(1);
+    function pageControl (){
+        setPage(page + 1)
+    }
 
     useEffect(() => {
 
             const getMovies = async () => {
-                const res = await api.get(`/movie/upcoming?language=en-US&page=1`)
+                const res = await api.get(`/movie/upcoming?language=en-US&page=${page}`)
     
                 if (res.status === 200) {
-                    setUpcomingMovies(res.data.results)
+                    setUpcomingMovies([ ...UpcomingMovies, ...res.data.results])
                 }
             }
             getMovies();
 
-    }, []);
+    }, [page]);
 
 
     return (
@@ -61,6 +65,11 @@ const UpcomingMovies = () => {
                                         </div>
                                     )}
                                 </div>
+                            </div>
+                        </div>
+                        <div className='col-12'>
+                            <div className='load-more-btn'>
+                                <button type='button' onClick={() => pageControl()}>Load More</button>
                             </div>
                         </div>
                     </div>

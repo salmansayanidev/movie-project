@@ -6,7 +6,10 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+ul {
+  padding: 0 !important;
+  margin: 0 !important;
+}
 h1 , h2 , h3 , h4 , h5 , h6 , p , a , li{
   -webkit-user-select: none;
   -webkit-touch-callout: none;
@@ -431,4 +434,214 @@ p.biography-para {
   margin: 20px 0;
   border-radius: 10px;
 
+}
+
+img.img-fluid.single-movie-img {
+  aspect-ratio: 1/1.4;
+  border-radius: 10px;
+  object-fit: cover;
+  object-position: center;
+}
+.single-movie-right-side h2 {
+  font-size: 30px;
+  font-weight: 700;
+  font-family: var(--fonts-family);
+  color: white;
+  margin-bottom: 0;
+}
+.single-movie-right-side span {
+  color: white;
+}
+
+.single-movie-section {
+  padding: 30px 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  background-color: #000000ba;
+}
+
+/* .single-movie-data::before {
+  content: " ";
+  position: absolute;
+  background-color: black;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+} */
+
+.popularity {
+  width: 80px;
+  height: 80px;
+  margin-top: 40px;
+}
+
+.popularity {
+  width: 120px;
+  margin-top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-transform: capitalize;
+  font-weight: 500;
+  font-family: var(--fonts-family);
+}
+
+.circle-porgress-bar {
+  margin-right: 10px;
+}
+
+.single-movie-right-side.position-relative h3 {
+  color: black;
+  margin-top: 0px;
+  font-weight: 100;
+  font-style: italic;
+  font-family: var(--fonts-family);
+}
+
+.single-movie-right-side.position-relative h4 {
+  font-size: 20px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-family: var(--fonts-family);
+}
+
+.single-movie-right-side.position-relative p {
+  font-size: 15px;
+  color: white;
+  font-weight: 300;
+  font-style: italic;
+  font-family: var(--fonts-family);
+}
+
+.genres span {
+  margin-right: 29px;
+  font-size: 15px;
+  font-weight: 500;
+  position: relative;
+}
+
+.genres span::before {
+  content: ' ';
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: white;
+  top: 50%;
+  left: -15px;
+  margin: 0 0px;
+  border-radius: 50%;
+}
+.genres {
+  margin-left: 15px;
+}
+
+.creaditsMovie {
+  text-decoration: none;
+  color: black;
+}
+
+.creaditsMovie-div h2 {
+  font-size: 13px;
+  font-weight: 700;
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-family: var(--fonts-family);
+  margin: 15px 5px 0 5px;
+}
+.creaditsMovie-div span {
+  color: black;
+  margin: 3px 5px 0 5px;
+}
+
+.creaditsMovie-div img {
+  width: 171px;
+  height: 175px;
+  border-radius: 10px 10px 0px 0px;
+  object-fit: cover;
+  object-position: top;
+}
+
+.creaditsMovie-div {
+  height: 285px;
+  background-color: white;
+  box-shadow: 1px 0px 4px 4px #00000026;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+h2.key-title {
+  font-size: 18px;
+  font-weight: 600;
+  font-family: var(--fonts-family);
+  margin-bottom: 20px;
+}
+h2.key-title span {
+  font-weight: 300;
+  display: block;
+}
+
+a.creaditmovie button {
+  padding: 4px 12px;
+  font-size: 14px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  text-transform: capitalize;
+  border-radius: 5px;
+  background: black;
+  color: white;
+  border: navajowhite;
+}
+
+
+.footerarea {
+  padding: 50px 0;
+  background-color: rgba(var(--tmdbDarkBlue),1);
+}
+img.footer-logo {
+  width: 130px;
+  height: 94px;
+}
+button.faq-open h4 {
+  font-weight: 700;
+  font-size: 24px;
+  font-family: var(--fonts-family);
+}
+button.faq-open {
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+
+.footer-list {
+  margin-top: 30px;
+}
+
+.footer-list a {
+  font-size: 14px;
+  color: white;
+  text-decoration: none;
+  font-weight: 300;
+  font-family: var(--fonts-family);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.firstwidget {
+  text-align: end;
+}
+
+button.footer-btn {
+  margin-top: 40px;
+  padding: 8px 24px;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 700;
+  color: rgba(var(--tmdbLightBlue),1);
 }

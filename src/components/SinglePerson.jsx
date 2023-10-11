@@ -4,7 +4,7 @@ import api from '../api'
 import "bootstrap/dist/css/bootstrap.css"
 import '../../src/index.css'
 import SingleSocialProfile from './SocialProfile';
-import SingleCreaditsMovies from './MovieCreadits';
+import SingleCreaditsMovies from './personCreadits';
 
 
 const SinglePerson = () => {

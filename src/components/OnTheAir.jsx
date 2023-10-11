@@ -12,20 +12,24 @@ import 'react-circular-progressbar/dist/styles.css';
 const OnTheAir = () => {
 
     const [onTheAir, setOnTheAir] = useState([]);
+    const [page, setPage] = useState(1);
+    function pageControl (){
+        setPage(page + 1)
+    }
 
 
     useEffect(() => {
 
             const getOnTheAir = async () => {
-                const res = await api.get(`/tv/on_the_air?language=en-US`)
+                const res = await api.get(`/tv/on_the_air?language=en-US&page=${page}`)
     
                 if (res.status === 200) {
-                    setOnTheAir(res.data.results)
+                    setOnTheAir([...onTheAir , ...res.data.results])
                 }
             }
             getOnTheAir();
 
-    }, []);
+    }, [page]);
 
 
     return (
@@ -59,6 +63,11 @@ const OnTheAir = () => {
                                     )}
 
                                 </div>
+                            </div>
+                        </div>
+                        <div className='col-12'>
+                            <div className='load-more-btn'>
+                                <button type='button' onClick={() => pageControl()}>Load More</button>
                             </div>
                         </div>
                     </div>

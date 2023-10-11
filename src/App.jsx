@@ -1,8 +1,7 @@
-// import { useState, useEffect } from 'react'
 import './App.css'
 import Home from './screens/home'
 import Header from './components/Header'
-import {  Route, Routes, } from 'react-router-dom';
+import {  Route, Routes } from 'react-router-dom';
 import SingleMovie from './components/SingleMovie';
 import PopularMovies from './components/PopularMovies'
 import NowPlaying from './components/NowPlaying';
@@ -14,8 +13,9 @@ import AiringToday from './components/AiringToday';
 import OnTheAir from './components/OnTheAir';
 import PopularTvShows from './components/PopularTvShows';
 import TopRatedTvShows from './components/TopRatedTvShows';
+import Footer from './components/Footer';
+// import SingleTvShow from './components/SingleTvShow';
 
-// import api from './api/'
 
 
 function App() {
@@ -31,6 +31,7 @@ function App() {
           <Route path="/movie/upcoming" element={<UpcomingMovies />} />
           <Route path="/movie/top-rated" element={<TopRatedMovies />} />
           <Route path='/movie/:id' element={<SingleMovie />} />
+          {/* <Route path='/tv/:id' element={<SingleTvShow />} /> */}
           <Route path='/person' element={<PopularPerson />} />
           <Route path='/person/:id' element={<SinglePerson />} />
           <Route path='/tv/airing-today' element={<AiringToday />} />
@@ -38,6 +39,7 @@ function App() {
           <Route path='/tv' element={<PopularTvShows />} />
           <Route path='/tv/top-rated' element={<TopRatedTvShows />} />
         </Routes>
+      <Footer />
     </>
   )
 }

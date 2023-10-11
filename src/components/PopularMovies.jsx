@@ -12,27 +12,25 @@ import 'react-circular-progressbar/dist/styles.css';
 const PopularMovies = () => {
 
     const [popularMovies, setPopularMovies] = useState([]);
-    // const [displayedProducts, setDisplayedProducts] = useState([])
-    // const [visibleProducts, setvisibleProducts] = useState(20)
-    // const [productTotal, setproductTotal] = useState(0)
-
-
-
+    const [page, setPage] = useState(1);
+    function pageControl (){
+        setPage(page + 1)
+    }
 
     useEffect(() => {
 
             const getPopularMovies = async () => {
-                const res = await api.get(`/movie/popular?language=en-US&page=1`)
+                const res = await api.get(`/movie/popular?language=en-US&page=${page}`)
     
                 if (res.status === 200) {
-                    setPopularMovies(res.data.results)
+                    setPopularMovies([ ...popularMovies, ...res.data.results])
     
                 }
             }
             getPopularMovies();
 
 
-    }, []);
+    }, [page]);
 
     return (
         <>
@@ -68,6 +66,11 @@ const PopularMovies = () => {
                                         </div>
                                     )}
                                 </div>
+                            </div>
+                        </div>
+                        <div className='col-12'>
+                            <div className='load-more-btn'>
+                                <button type='button' onClick={() => pageControl()}>Load More</button>
                             </div>
                         </div>
                     </div>

@@ -11,20 +11,24 @@ import Loader from "react-js-loader";
 const PopularPerson = () => {
 
     const [popularPersons, setPopularPersons] = useState([]);
+    const [page, setPage] = useState(1);
+    function pageControl (){
+        setPage(page + 1)
+    }
 
 
     useEffect(() => {
 
             const getPerson = async () => {
-                const res = await api.get(`/person/popular?language=en-US&page=1`)
+                const res = await api.get(`/person/popular?language=en-US&page=${page}`)
     
                 if (res.status === 200) {
-                    setPopularPersons(res.data.results)
+                    setPopularPersons([...popularPersons , ...res.data.results])
                 }
             }
             getPerson();
 
-    }, []);
+    }, [page]);
 
 
     return (
@@ -54,6 +58,11 @@ const PopularPerson = () => {
                                         <Loader type="spinner-circle" bgColor={"black"}  color={'black'} size={150} />
                                     </div>
                                 )}
+                            </div>
+                        </div>
+                        <div className='col-12'>
+                            <div className='load-more-btn'>
+                                <button type='button' onClick={() => pageControl()}>Load More</button>
                             </div>
                         </div>
                     </div>

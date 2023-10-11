@@ -12,20 +12,24 @@ import 'react-circular-progressbar/dist/styles.css';
 const AiringToday = () => {
 
     const [airingTodays, setAiringTodays] = useState([]);
+    const [page, setPage] = useState(1);
+    function pageControl (){
+        setPage(page + 1)
+    }
 
 
     useEffect(() => {
 
             const getAiringToday = async () => {
-                const res = await api.get(`/tv/airing_today?language=en-US`)
+                const res = await api.get(`/tv/airing_today?language=en-US&page=${page}`)
     
                 if (res.status === 200) {
-                    setAiringTodays(res.data.results)
+                    setAiringTodays([...airingTodays , ...res.data.results])
                 }
             }
             getAiringToday();
 
-    }, []);
+    }, [page]);
 
 
     return (
@@ -59,6 +63,11 @@ const AiringToday = () => {
                                     )}
 
                                 </div>
+                            </div>
+                        </div>
+                        <div className='col-12'>
+                            <div className='load-more-btn'>
+                                <button type='button' onClick={() => pageControl()}>Load More</button>
                             </div>
                         </div>
                     </div>
