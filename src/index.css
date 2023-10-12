@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap");
 
 * {
   margin: 0;
@@ -10,7 +9,15 @@ ul {
   padding: 0 !important;
   margin: 0 !important;
 }
-h1 , h2 , h3 , h4 , h5 , h6 , p , a , li{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+li {
   -webkit-user-select: none;
   -webkit-touch-callout: none;
   -moz-user-select: none;
@@ -21,10 +28,10 @@ h1 , h2 , h3 , h4 , h5 , h6 , p , a , li{
 }
 
 :root {
-  --fonts-family: 'Poppins', sans-serif;
-  --tmdbDarkBlue: 3,37,65;
-  --tmdbLightGreen: 30,213,169;
-  --tmdbLightBlue: 1,180,228;
+  --fonts-family: "Poppins", sans-serif;
+  --tmdbDarkBlue: 3, 37, 65;
+  --tmdbLightGreen: 30, 213, 169;
+  --tmdbLightBlue: 1, 180, 228;
 }
 
 body {
@@ -34,7 +41,7 @@ body {
   font-size: 20px;
   font-family: var(--fonts-family);
   font-weight: 500;
-  color: #3C4242;
+  color: #3c4242;
   display: flex;
   justify-content: center;
   margin-top: 50px;
@@ -46,7 +53,7 @@ html {
 
 #header {
   padding: 20px 95px;
-  background-color: rgba(var(--tmdbDarkBlue),1);
+  background-color: rgba(var(--tmdbDarkBlue), 1);
 }
 .header-ul {
   list-style: none;
@@ -81,15 +88,15 @@ button.links.btn.btn-secondary.dropdown-toggle {
   padding: 0;
 }
 .dropdown-toggle::after {
-    display: inline-block;
-    margin-left: 0.255em;
-    vertical-align: 0.255em;
-    content: "";
-    border-top: 0.3em solid;
-    border-right: 0.3em solid transparent;
-    border-bottom: 0;
-    border-left: 0.3em solid transparent;
-    display: none !important;
+  display: inline-block;
+  margin-left: 0.255em;
+  vertical-align: 0.255em;
+  content: "";
+  border-top: 0.3em solid;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0;
+  border-left: 0.3em solid transparent;
+  display: none !important;
 }
 .links:hover {
   font-weight: 500;
@@ -127,7 +134,11 @@ button.links.btn.btn-secondary.dropdown-toggle {
   border-radius: 50px;
 }
 button.banner-btn {
-  background: linear-gradient(to right,rgba(var(--tmdbLightGreen),1) 0%,rgba(var(--tmdbLightBlue),1) 100%);
+  background: linear-gradient(
+    to right,
+    rgba(var(--tmdbLightGreen), 1) 0%,
+    rgba(var(--tmdbLightBlue), 1) 100%
+  );
   border: none;
   color: white;
   padding: 0px 20px;
@@ -140,7 +151,7 @@ button.banner-btn {
 .banner-input::placeholder {
   font-size: 20px;
   font-family: var(--fonts-family);
-  font-weight: 400
+  font-weight: 400;
 }
 h1.trendmovie-title {
   font-size: 13px;
@@ -159,7 +170,6 @@ h1.trendmovie-title {
 .trend-movie-img {
   border-radius: 10px;
   margin-bottom: 10px;
-
 }
 .trend-movies-sec {
   padding: 10px 0;
@@ -175,7 +185,7 @@ h1.trendmovie-title {
 .tab-btn:hover {
   background-color: white;
   color: var(--tmdbDarkBlue);
-  border: 2px solid rgba(var(--tmdbDarkBlue),1);
+  border: 2px solid rgba(var(--tmdbDarkBlue), 1);
 }
 .text-dec-none {
   text-decoration: none;
@@ -189,13 +199,13 @@ h1.trendmovie-title {
   font-weight: 500;
   color: white;
   border-radius: 50px;
-  border: 2px solid rgba(var(--tmdbDarkBlue),1);
-  background-color: rgba(var(--tmdbDarkBlue),1);
+  border: 2px solid rgba(var(--tmdbDarkBlue), 1);
+  background-color: rgba(var(--tmdbDarkBlue), 1);
   margin-right: 10px;
   text-transform: capitalize;
   transition: 0.5s;
 }
-.active-tabs  {
+.active-tabs {
   background-color: #fff;
 }
 .active-tabs::before {
@@ -210,12 +220,12 @@ h1.trendmovie-title {
   background: black;
 }
 .content {
-    background-color: transparent;
-    display: none;
-    padding: 0;
+  background-color: transparent;
+  display: none;
+  padding: 0;
 }
 .active-content {
-    display: flex;
+  display: flex;
 }
 .popularmovies a {
   text-decoration: none;
@@ -223,7 +233,7 @@ h1.trendmovie-title {
   padding: 0 0 10px 0;
   box-shadow: 1px -1px 10px 0px #0000008c;
   margin-bottom: 20px;
-  border-radius: 10px ;
+  border-radius: 10px;
   text-align: center;
   margin-bottom: 30px;
   width: 19%;
@@ -355,7 +365,7 @@ p.biography-para {
   margin-right: 15px;
 }
 .movies-popup {
-  background-color: rgba(var(--tmdbDarkBlue),1);
+  background-color: rgba(var(--tmdbDarkBlue), 1);
   padding: 20px 10px;
   margin-top: 10px;
   overflow-y: auto;
@@ -397,15 +407,14 @@ p.biography-para {
   object-fit: cover;
 }
 
-
 .popup-rightarea p::-webkit-scrollbar {
   width: 0.09em;
 }
- 
+
 .popup-rightarea p::-webkit-scrollbar-track {
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
- 
+
 .popup-rightarea p::-webkit-scrollbar-thumb {
   background-color: white;
   outline: 1px solid white;
@@ -433,7 +442,6 @@ p.biography-para {
   border: none;
   margin: 20px 0;
   border-radius: 10px;
-
 }
 
 img.img-fluid.single-movie-img {
@@ -526,7 +534,7 @@ img.img-fluid.single-movie-img {
 }
 
 .genres span::before {
-  content: ' ';
+  content: " ";
   position: absolute;
   width: 5px;
   height: 5px;
@@ -597,10 +605,9 @@ a.creaditmovie button {
   border: navajowhite;
 }
 
-
 .footerarea {
   padding: 50px 0;
-  background-color: rgba(var(--tmdbDarkBlue),1);
+  background-color: rgba(var(--tmdbDarkBlue), 1);
 }
 img.footer-logo {
   width: 130px;
@@ -643,5 +650,5 @@ button.footer-btn {
   border-radius: 5px;
   font-size: 16px;
   font-weight: 700;
-  color: rgba(var(--tmdbLightBlue),1);
+  color: rgba(var(--tmdbLightBlue), 1);
 }
