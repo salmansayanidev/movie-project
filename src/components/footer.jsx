@@ -1,5 +1,5 @@
 import "bootstrap/dist/css/bootstrap.css";
-import '../../src/index.css'
+import "../../src/index.css";
 import FooterLogo from "../images/FooterLogo.png";
 import FooterComponent from "./footerData";
 import { useState } from "react";
@@ -13,27 +13,18 @@ const footerData = [
       "Contact Us",
       "Support Forums",
       "API",
-      "System Status"
+      "System Status",
     ],
   },
   {
     id: 2,
     title: "GET INVOLVED",
-    list: [
-      "Contribution Bible",
-      "Add New Movie",
-      "Add New TV Show"
-    ],
+    list: ["Contribution Bible", "Add New Movie", "Add New TV Show"],
   },
   {
     id: 3,
     title: "COMMUNITY",
-    list: [
-      "Guidelines",
-      "Discussions",
-      "Leaderboard",
-      "Twitter"
-    ],
+    list: ["Guidelines", "Discussions", "Leaderboard", "Twitter"],
   },
   {
     id: 4,
@@ -42,7 +33,7 @@ const footerData = [
       "Terms of Use",
       "API Terms of Use",
       "Privacy Policy",
-      "DMCA Takedown Request"
+      "DMCA Takedown Request",
     ],
   },
 ];
@@ -65,7 +56,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {footerData.map((item , index) => {
+          {footerData.map((item, index) => {
             return (
               <>
                 <div key={index} className="col-lg-2 col-12">
