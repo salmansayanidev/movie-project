@@ -3,26 +3,27 @@ import "bootstrap/dist/js/bootstrap.js";
 import logo from "../images/movie-logo.svg";
 import "../index.css";
 import { Link } from "react-router-dom";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Header = () => {
+  
   return (
     <>
       <header id="header">
         <div className="container">
           <div className="row align-items-center">
-            <div className="col-2">
+            <div className="col-5 col-md-4 col-lg-3">
               <div className="logo">
                 <Link to="/">
                   <img src={logo} alt="" />
                 </Link>
               </div>
             </div>
-            <div className="col-5">
+            <div className="col-lg-5 col-6">
               <nav className="navigation">
                 <ul className="header-ul">
                   <li>
-                    {/* <a className="links" href="#">movies</a> */}
-                    {/* <Link to="/movie" className="links">movies</Link> */}
                     <div className="dropdown">
                       <button
                         className="links btn btn-secondary dropdown-toggle"
@@ -152,11 +153,14 @@ const Header = () => {
                         </li>
                       </ul>
                     </div>
-                    {/* <a className="links" href="#">More</a>
-                                    <Link to="/movie" className="links">More</Link> */}
                   </li>
                 </ul>
               </nav>
+              <div className="menu-btn-area">
+                <div className="menu-btn">
+                  <FontAwesomeIcon icon={faBars} />
+                </div>
+              </div>
             </div>
           </div>
         </div>

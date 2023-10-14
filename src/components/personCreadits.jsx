@@ -46,15 +46,19 @@ const SingleCreaditsMovies = () => {
             slidesPerView={5}
             spaceBetween={60}
             breakpoints={{
-              360: {
-                slidesPerView: 1,
+              320: {
+                slidesPerView: 2,
+                spaceBetween: 10,
+              },
+              480: {
+                slidesPerView: 3,
+                spaceBetween: 10,
+              },
+              1024: {
+                slidesPerView: 3,
                 spaceBetween: 20,
               },
-              768: {
-                slidesPerView: 2,
-                spaceBetween: 40,
-              },
-              1920: {
+              1366: {
                 slidesPerView: 5,
                 spaceBetween: 10,
               },

@@ -32,7 +32,7 @@ const SingleMovie = () => {
             <div className="col-12">
               <div key={singleMovie.id} className="single-movie-data">
                 <div className="row align-items-center">
-                  <div className="col-3">
+                  <div className="col-12 col-sm-5 col-md-5 col-lg-3">
                     <div className="row">
                       <div className="popularmovies">
                         <img
@@ -46,7 +46,7 @@ const SingleMovie = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="col-8">
+                  <div className="col-12 col-sm-7 col-md-7 col-lg-8 ">
                     <div className="single-movie-right-side position-relative">
                       <h2>{singleMovie.original_title || singleMovie.title}</h2>
                       <span>{singleMovie.release_date}</span>
@@ -82,12 +82,12 @@ const SingleMovie = () => {
       <section>
         <div className="container">
           <div className="row">
-            <div className="col-10">
+            <div className="col-12 col-md-12 col-lg-10">
               <div className="row">
                 <MovieCreadits />
               </div>
             </div>
-            <div className="col-2">
+            <div className="col-12 col-md-12 col-lg-2">
               <div key={singleMovie.id} className="moviesStatus">
                 <h2 className="key-title mt-5">
                   Status <span>{singleMovie.status}</span>

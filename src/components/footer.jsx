@@ -49,7 +49,7 @@ const Footer = () => {
     <footer className="footerarea">
       <div className="container">
         <div className="row justify-content-center">
-          <div className="col-lg-2 col-12">
+          <div className="col-lg-2 col-6 col-sm-6 col-md-4">
             <div className="firstwidget">
               <img src={FooterLogo} alt="" className="footer-logo" />
               <button className="footer-btn">Hi salmanasif!</button>
@@ -59,7 +59,7 @@ const Footer = () => {
           {footerData.map((item, index) => {
             return (
               <>
-                <div key={index} className="col-lg-2 col-12">
+                <div key={index} className="col-lg-2 col-6 col-sm-6 col-md-4">
                   <FooterComponent
                     title={item.title}
                     itemList={item.list}

@@ -76,15 +76,19 @@ const TrendingMovies = () => {
                   slidesPerView={6}
                   spaceBetween={60}
                   breakpoints={{
-                    360: {
-                      slidesPerView: 1,
+                    320: {
+                      slidesPerView: 2,
                       spaceBetween: 20,
                     },
-                    768: {
-                      slidesPerView: 2,
-                      spaceBetween: 40,
+                    767: {
+                      slidesPerView: 3,
+                      spaceBetween: 10,
                     },
-                    1920: {
+                    992: {
+                      slidesPerView: 5,
+                      spaceBetween: 10,
+                    },
+                    1600: {
                       slidesPerView: 6,
                       spaceBetween: 10,
                     },

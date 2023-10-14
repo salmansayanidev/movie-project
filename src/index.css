@@ -26,15 +26,14 @@ li {
   padding: 0;
   margin: 0;
 }
-
 :root {
   --fonts-family: "Poppins", sans-serif;
   --tmdbDarkBlue: 3, 37, 65;
   --tmdbLightGreen: 30, 213, 169;
   --tmdbLightBlue: 1, 180, 228;
 }
-
 body {
+  scroll-behavior: smooth;
   overflow-x: hidden;
 }
 .loading-para {
@@ -52,7 +51,7 @@ html {
 /* header */
 
 #header {
-  padding: 20px 95px;
+  padding: 20px 0;
   background-color: rgba(var(--tmdbDarkBlue), 1);
 }
 .header-ul {
@@ -237,6 +236,8 @@ h1.trendmovie-title {
   text-align: center;
   margin-bottom: 30px;
   width: 19%;
+  overflow: hidden;
+  position: relative;
 }
 .popularmovie-img {
   border-radius: 10px 10px 0 0;
@@ -246,13 +247,13 @@ h1.trendmovie-title {
 .popularmovies {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 .abc {
   width: 36px;
   height: 34px;
   position: absolute;
-  bottom: 20.5%;
+  bottom: 19.5%;
   left: 12%;
   background-color: black;
   border-radius: 100%;
@@ -278,16 +279,6 @@ h1.trendmovie-title {
   -webkit-transition: stroke-dashoffset 0.5s ease 0s;
   transition: stroke-dashoffset 0.5s ease 0s;
 }
-.popularmovies a {
-  position: relative;
-}
-/* .popularmovie {
-  padding-bottom: 20px;
-  margin-bottom: 20px;
-  background-color: white;
-  border-radius: 10px 10px 0 0;
-  box-shadow: 1px 1px 10px 1px #00000059;
-} */
 .popularpeople-img {
   height: 450px;
   width: 300px;
@@ -321,7 +312,6 @@ p.biography-para {
   font-family: var(--fonts-family);
   font-weight: 500;
 }
-
 .popularmovie.text-center {
   background-color: white;
   border-radius: 10px 10px 0px 0px;
@@ -359,7 +349,7 @@ p.biography-para {
 .acting-lists {
   background-color: white;
   box-shadow: 1px 0px 5px 2px #00000029;
-  margin-top: 20px;
+  margin: 20px 0;
 }
 .mr-15px {
   margin-right: 15px;
@@ -406,15 +396,12 @@ p.biography-para {
   aspect-ratio: 1/1.4;
   object-fit: cover;
 }
-
 .popup-rightarea p::-webkit-scrollbar {
   width: 0.09em;
 }
-
 .popup-rightarea p::-webkit-scrollbar-track {
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
-
 .popup-rightarea p::-webkit-scrollbar-thumb {
   background-color: white;
   outline: 1px solid white;
@@ -443,7 +430,6 @@ p.biography-para {
   margin: 20px 0;
   border-radius: 10px;
 }
-
 img.img-fluid.single-movie-img {
   aspect-ratio: 1/1.4;
   border-radius: 10px;
@@ -460,7 +446,6 @@ img.img-fluid.single-movie-img {
 .single-movie-right-side span {
   color: white;
 }
-
 .single-movie-section {
   padding: 30px 0;
   background-size: cover;
@@ -469,23 +454,11 @@ img.img-fluid.single-movie-img {
   position: relative;
   background-color: #000000ba;
 }
-
-/* .single-movie-data::before {
-  content: " ";
-  position: absolute;
-  background-color: black;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-} */
-
 .popularity {
   width: 80px;
   height: 80px;
   margin-top: 40px;
 }
-
 .popularity {
   width: 120px;
   margin-top: 0;
@@ -497,11 +470,9 @@ img.img-fluid.single-movie-img {
   font-weight: 500;
   font-family: var(--fonts-family);
 }
-
 .circle-porgress-bar {
   margin-right: 10px;
 }
-
 .single-movie-right-side.position-relative h3 {
   color: black;
   margin-top: 0px;
@@ -509,7 +480,6 @@ img.img-fluid.single-movie-img {
   font-style: italic;
   font-family: var(--fonts-family);
 }
-
 .single-movie-right-side.position-relative h4 {
   font-size: 20px;
   color: white;
@@ -517,7 +487,6 @@ img.img-fluid.single-movie-img {
   font-weight: 800;
   font-family: var(--fonts-family);
 }
-
 .single-movie-right-side.position-relative p {
   font-size: 15px;
   color: white;
@@ -525,14 +494,12 @@ img.img-fluid.single-movie-img {
   font-style: italic;
   font-family: var(--fonts-family);
 }
-
 .genres span {
   margin-right: 29px;
   font-size: 15px;
   font-weight: 500;
   position: relative;
 }
-
 .genres span::before {
   content: " ";
   position: absolute;
@@ -547,12 +514,10 @@ img.img-fluid.single-movie-img {
 .genres {
   margin-left: 15px;
 }
-
 .creaditsMovie {
   text-decoration: none;
   color: black;
 }
-
 .creaditsMovie-div h2 {
   font-size: 13px;
   font-weight: 700;
@@ -565,15 +530,13 @@ img.img-fluid.single-movie-img {
   color: black;
   margin: 3px 5px 0 5px;
 }
-
 .creaditsMovie-div img {
-  width: 171px;
+  width: 100%;
   height: 175px;
   border-radius: 10px 10px 0px 0px;
   object-fit: cover;
   object-position: top;
 }
-
 .creaditsMovie-div {
   height: 285px;
   background-color: white;
@@ -592,7 +555,6 @@ h2.key-title span {
   font-weight: 300;
   display: block;
 }
-
 a.creaditmovie button {
   padding: 4px 12px;
   font-size: 14px;
@@ -604,7 +566,6 @@ a.creaditmovie button {
   color: white;
   border: navajowhite;
 }
-
 .footerarea {
   padding: 50px 0;
   background-color: rgba(var(--tmdbDarkBlue), 1);
@@ -623,11 +584,9 @@ button.faq-open {
   border: none;
   color: white;
 }
-
 .footer-list {
   margin-top: 30px;
 }
-
 .footer-list a {
   font-size: 14px;
   color: white;
@@ -637,11 +596,9 @@ button.faq-open {
   display: block;
   margin-bottom: 8px;
 }
-
 .firstwidget {
   text-align: end;
 }
-
 button.footer-btn {
   margin-top: 40px;
   padding: 8px 24px;
@@ -651,4 +608,370 @@ button.footer-btn {
   font-size: 16px;
   font-weight: 700;
   color: rgba(var(--tmdbLightBlue), 1);
+}
+.menu-btn {
+  width: 25px;
+  height: 25px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+.menu-btn-area {
+  display: none;
+}
+img.img-fluid.popularpeople-profile {
+  border-radius: 10px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+@media (max-width:1366px) {
+  .footer-list a {
+    font-size: 12px;
+}
+  button.faq-open h4 {
+    font-size: 21px;
+  }
+  h2.key-title {
+    font-size: 15px;
+  }
+  .popularmovies a {
+    width: 24%;
+  }
+}
+@media (max-width:1024px) {
+  .single-movie-right-side.position-relative h3 {
+    font-size: 20px;
+  }
+  .genres span {
+    font-size: 12px;
+  }
+  .single-movie-right-side span {
+    color: white;
+    font-size: 14px;
+  }
+  .footer-list a {
+    font-size: 12px;
+  }
+  .creaditsMovie-div h2 {
+    font-size: 11px;
+  }
+  .creaditsMovie-div span {
+    font-size: 12px;
+  }
+  button.links.btn.btn-secondary.dropdown-toggle {
+    font-size: 18px;
+  }
+  button.faq-open h4 {
+    font-size: 18px;
+  }
+  .footer-list a {
+    font-size: 10px;
+  }
+  button.footer-btn {
+    padding: 8px 20px;
+    font-size: 13px;
+  }
+  h2.key-title {
+    font-size: 12px;
+  }
+  .single-movie-right-side h2 {
+    font-size: 24px;
+  }
+  .single-movie-right-side.position-relative p {
+    font-size: 13px;
+  }
+  .single-movie-right-side.position-relative h4 {
+    font-size: 15px;
+  }
+  .popularity {
+    width: 100px;
+  }
+}
+@media (max-width:768px) {
+  nav.navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    height: 100vh;
+    z-index: 9999999;
+  }
+  ul.header-ul {
+    display: block;
+    padding: 30px 20px !important;
+  }
+  ul.header-ul li .dropdown {
+    margin-bottom: 20px;
+  }
+  .popularmovies a {
+    width: 32%;
+  }
+  p.biography-para {
+    line-height: 1.3;
+    font-weight: 400;
+    font-family: var(--fonts-family);
+    font-size: 10px;
+}
+  .creadits-movie p {
+    font-size: 12px;
+  }
+  .people-name {
+    font-size: 22px;
+    margin-bottom: 0;
+  }
+  h2.bio {
+    font-size: 17px;
+    margin-bottom: 10px;
+  }
+  .acting-list h2 {
+    font-size: 10px;
+  }
+  .acting-list p {
+    font-size: 12px;
+    font-weight: 400;
+  }
+  .mr-15px {
+    margin-right: 12px;
+  }
+  .popup-leftarea {
+    aspect-ratio: 1/1.2;
+  }
+  .movies-popup {
+    top: -195px;
+    left: -210px;
+}
+  .moviesStatus {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  h2.key-title {
+    width: 18%;
+    margin-right: 10px;
+  }
+  h2.key-title.mt-5 {
+    margin-top: 0px !important;
+  }
+  .menu-btn-area {
+    display: block;
+  }
+  .banner-sb-title {
+    font-size: 18px;
+  }
+  .footerarea .row.justify-content-center {
+    justify-content: start !important;
+  }
+  .firstwidget {
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+  }
+  button.footer-btn {
+    width: fit-content;
+    margin-top: 20px;
+  }
+  nav.navigation {
+    display: none;
+  }
+  .menu-btn-area {
+    text-align: -webkit-right;
+  }
+  .row.align-items-center {
+    justify-content: space-between;
+  }
+  .footer-list {
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+}
+@media (max-width:767px) {
+  .popularmovies a {
+    width: 48%;
+  }
+  .genres span::before {
+    display: none;
+  }
+  .genres {
+    margin-left: 0;
+  }
+  .single-movie-right-side.position-relative p {
+    font-size: 9px;
+  }
+  .single-movie-right-side h2 {
+    font-size: 20px;
+  }
+  .single-movie-right-side span {
+    font-size: 12px;
+  }
+  .popularity {
+    width: 80px;
+    font-size: 12px;
+  }
+  h2.key-title {
+    width: 46%;
+    font-size: 9px;
+    margin-right: 5px;
+  }
+  a.creaditmovie button {
+    font-size: 10px;
+  }
+  input.banner-input::placeholder {
+    font-size: 16px;
+  }
+  h1.trendmovie-title {
+    font-size: 11px;
+  }
+  .abc {
+    bottom: 22.5%;
+  }
+
+  .banner-title {
+    font-size: 30px;
+  }
+  .banner-sb-title {
+    font-size: 14px;
+  }
+  .trend-movies-sec-title {
+    font-size: 30px;
+    margin: 30px 15px 30px 0;
+  }
+  .tabs {
+    padding: 0 10px;
+    font-size: 12px;
+  }
+}
+@media (max-width:480px) {
+  .popularmovies a {
+    width: 49%;
+  }
+  .abc {
+    bottom: 20%;
+  }
+  .creaditsMovie-div h2 {
+    font-size: 9px;
+  }
+  .creaditsMovie-div span {
+    font-size: 10px;
+  }
+  p.biography-para {
+    line-height: 1.3;
+    font-weight: 400;
+    font-family: var(--fonts-family);
+    font-size: 12px;
+}
+  img.img-fluid.popularpeople-profile {
+    border-radius: 10px;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+  }
+  .people-right-area h1 {
+    margin-top: 20px;
+  }
+  section.mt-5 {
+    margin-top: 10px !important;
+  }
+  .movies-popup {
+    top: -178px;
+    left: 23px;
+    width: 340px;
+  }
+  img.img-fluid.popularpeople-img {
+    width: 100%;
+  }
+  img.img-fluid.single-movie-img {
+    aspect-ratio: 1/1;
+    margin-bottom: 15px;
+}
+  input.banner-input::placeholder {
+    font-size: 13px;
+  }
+  button.banner-btn {
+    padding: 0px 20px;
+    font-size: 14px;
+  }
+  .banner-input {
+    padding: 6px 0 6px 15px;
+  }
+  .banner {
+    background-image: url(/src/images/banner-img.jpg);
+    padding: 40px 30px;
+  } 
+  .creaditsMovie-div img {
+    height: 220px;
+  }
+  h2.key-title {
+    width: 100%;
+    font-size: 9px;
+    margin-right: 5px;
+  }
+  section.single-movie-section.mt-5 {
+    margin-top: 0px !important;
+  }
+}
+@media (max-width:375px) {
+  .banner-sb-title {
+    font-size: 10px;
+  }
+  .acting-list p {
+    font-size: 9px;
+    font-weight: 400;
+  }
+  .popup-rightarea span {
+    font-weight: 400;
+    font-size: 13px;
+    padding: 0px 5px;
+    border-radius: 5px;
+    position: relative;
+    top: 9px;
+  }
+  .movies-popup {
+    top: -178px;
+    left: 0;
+    width: 100%;
+  }
+  .acting-list {
+    padding: 15px 5px;
+}
+  .moviesStatus {
+    justify-content: start;
+  }
+  button.footer-btn {
+    width: fit-content;
+    margin-top: 20px;
+    font-size: 10px;
+  }
+  .release-date {
+    font-size: 8px;
+  }
+  h1.trendmovie-title {
+    font-size: 10px;
+  }
+  input.banner-input::placeholder {
+    font-size: 10px;
+  }
+  button.banner-btn {
+    padding: 0px 15px;
+    font-size: 10px;
+  }
+  .banner-input {
+    padding: 0px 0 3px 15px;
+  }
+  .genres {
+    display: flex;
+    flex-wrap: wrap;
+}
+}
+@media (max-width:320px) {
+  .trend-movies-sec-title {
+    font-size: 23px;
+  }
 }

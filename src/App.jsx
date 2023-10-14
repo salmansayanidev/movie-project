@@ -14,7 +14,6 @@ import OnTheAir from "./components/OnTheAir";
 import PopularTvShows from "./components/PopularTvShows";
 import TopRatedTvShows from "./components/TopRatedTvShows";
 import Footer from "./components/Footer";
-// import SingleTvShow from './components/SingleTvShow';
 
 function App() {
   return (
@@ -27,7 +26,6 @@ function App() {
         <Route path="/movie/upcoming" element={<UpcomingMovies />} />
         <Route path="/movie/top-rated" element={<TopRatedMovies />} />
         <Route path="/movie/:id" element={<SingleMovie />} />
-        {/* <Route path='/tv/:id' element={<SingleTvShow />} /> */}
         <Route path="/person" element={<PopularPerson />} />
         <Route path="/person/:id" element={<SinglePerson />} />
         <Route path="/tv/airing-today" element={<AiringToday />} />
