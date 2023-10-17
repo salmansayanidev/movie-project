@@ -87,7 +87,7 @@ const UpcomingMovies = () => {
                     </div>
                   )}
                 </div>
-              </div>
+              </div> 
             </div>
             <div className="col-12">
               <div className="load-more-btn">

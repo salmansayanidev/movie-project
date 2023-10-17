@@ -18,7 +18,6 @@ const SinglePerson = () => {
       if (res.status === 200) {
         setSinglePerson(res.data);
 
-        // console.log(singlePerson.also_known_as.map( item ))
       }
     };
     getPopularPerson();

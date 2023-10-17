@@ -692,7 +692,7 @@ img.img-fluid.popularpeople-profile {
     width: 100px;
   }
 }
-@media (max-width:768px) {
+@media (max-width:991px) {
   nav.navigation {
     position: fixed;
     top: 0;

@@ -21,7 +21,6 @@ const SingleSocialProfile = () => {
       if (res.status === 200) {
         setSingleSocialProfile(res.data);
 
-        // console.log(singlePerson.also_known_as.map( item ))
       }
     };
     getSingleProfile();

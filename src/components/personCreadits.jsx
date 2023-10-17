@@ -27,7 +27,6 @@ const SingleCreaditsMovies = () => {
 
       if (res.status === 200) {
         setSingleCreaditsMovies(res.data);
-        console.log(singleCreaditsMovies);
       }
     };
     getSingleCreadits();
