@@ -5,9 +5,16 @@ import "../index.css";
 import { Link } from "react-router-dom";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState } from "react";
 
 const Header = () => {
+
+  const [ showMenu , setShowMenu] = useState(false)
   
+  const handleMenu = () => {
+    setShowMenu(!showMenu)
+  }
+
   return (
     <>
       <header id="header">
@@ -21,7 +28,7 @@ const Header = () => {
               </div>
             </div>
             <div className="col-lg-5 col-6">
-              <nav className="navigation">
+              <nav className={showMenu ? "navigation active" : "navigation"}>
                 <ul className="header-ul">
                   <li>
                     <div className="dropdown">
@@ -34,12 +41,12 @@ const Header = () => {
                         movies
                       </button>
                       <ul className="dropdown-menu">
-                        <li>
+                        <li onClick={handleMenu}>
                           <Link className="dropdown-item" to="/movie">
                             Popular
                           </Link>
                         </li>
-                        <li>
+                        <li onClick={handleMenu}>
                           <Link
                             className="dropdown-item"
                             to="/movie/now-playing"
@@ -47,12 +54,12 @@ const Header = () => {
                             Now Playing
                           </Link>
                         </li>
-                        <li>
+                        <li onClick={handleMenu}>
                           <Link className="dropdown-item" to="/movie/upcoming">
                             Upcoming
                           </Link>
                         </li>
-                        <li>
+                        <li onClick={handleMenu}>
                           <Link className="dropdown-item" to="/movie/top-rated">
                             Top Rated
                           </Link>
@@ -71,30 +78,28 @@ const Header = () => {
                         TV Shows
                       </button>
                       <ul className="dropdown-menu">
-                        <li>
+                        <li onClick={handleMenu}>
                           <Link className="dropdown-item" to="/tv/airing-today">
                             Airing Today
                           </Link>
                         </li>
-                        <li>
+                        <li onClick={handleMenu}>
                           <Link className="dropdown-item" to="/tv/on-the-air">
                             On Tv
                           </Link>
                         </li>
-                        <li>
+                        <li onClick={handleMenu}>
                           <Link className="dropdown-item" to="/tv">
                             Popular
                           </Link>
                         </li>
-                        <li>
+                        <li onClick={handleMenu}>
                           <Link className="dropdown-item" to="/tv/top-rated">
                             Top Rated
                           </Link>
                         </li>
                       </ul>
                     </div>
-                    {/* <a className="links" href="#">TV Shows</a>
-                                    <Link to="/movie" className="links">TV Shows</Link> */}
                   </li>
                   <li>
                     <div className="dropdown">
@@ -107,7 +112,7 @@ const Header = () => {
                         People
                       </button>
                       <ul className="dropdown-menu">
-                        <li>
+                        <li onClick={handleMenu}>
                           <Link className="dropdown-item" to="/person">
                             Popular People
                           </Link>
@@ -128,12 +133,12 @@ const Header = () => {
                         More
                       </button>
                       <ul className="dropdown-menu">
-                        <li>
+                        <li onClick={handleMenu}>
                           <Link className="dropdown-item" to="/movie">
                             Discussions
                           </Link>
                         </li>
-                        <li>
+                        <li onClick={handleMenu}>
                           <Link
                             className="dropdown-item"
                             to="/movie/now-playing"
@@ -141,12 +146,12 @@ const Header = () => {
                             Leaderboard
                           </Link>
                         </li>
-                        <li>
+                        <li onClick={handleMenu}>
                           <Link className="dropdown-item" to="/movie/upcoming">
                             Support
                           </Link>
                         </li>
-                        <li>
+                        <li onClick={handleMenu}>
                           <Link className="dropdown-item" to="/movie/top-rated">
                             API
                           </Link>
@@ -157,8 +162,13 @@ const Header = () => {
                 </ul>
               </nav>
               <div className="menu-btn-area">
-                <div className="menu-btn">
-                  <FontAwesomeIcon icon={faBars} />
+                <div className="menu-btn" onClick={handleMenu}>
+                  {showMenu ?  (
+                    "close"
+                  ) : (
+                    <FontAwesomeIcon icon={faBars} />
+
+                  )}
                 </div>
               </div>
             </div>
