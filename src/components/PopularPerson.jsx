@@ -35,7 +35,10 @@ const PopularPerson = () => {
               <div className="row">
                 {popularPersons && popularPersons.length ? (
                   popularPersons.map((popularPerson, index) => (
-                    <div key={index} className="col-3">
+                    <div
+                      key={index}
+                      className="col-6 col-sm-4 col-md-4 col-lg-3"
+                    >
                       <Link
                         className="text-dec-none"
                         to={`/person/${popularPerson.id}`}
@@ -50,7 +53,7 @@ const PopularPerson = () => {
                             alt=""
                           />
                           <h1 className="trendmovie-title mt-0">
-                            {popularPerson.name}
+                            {popularPerson.name}   
                           </h1>
                           <p className="release-date mb-0">
                             {popularPerson.id}

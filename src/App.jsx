@@ -13,7 +13,7 @@ import AiringToday from "./components/AiringToday";
 import OnTheAir from "./components/OnTheAir";
 import PopularTvShows from "./components/PopularTvShows";
 import TopRatedTvShows from "./components/TopRatedTvShows";
-import Footer from "./components/Footer";
+import Footer from "./components/footer";
 
 function App() {
   return (

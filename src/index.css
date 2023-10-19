@@ -17,7 +17,8 @@ h5,
 h6,
 p,
 a,
-li {
+li,
+span {
   -webkit-user-select: none;
   -webkit-touch-callout: none;
   -moz-user-select: none;
@@ -102,9 +103,11 @@ button.links.btn.btn-secondary.dropdown-toggle {
   color: yellow;
 }
 /* banner */
+
 .banner {
   background-image: url(/src/images/banner-img.jpg);
   padding: 100px 30px;
+  position: relative;
 }
 .banner-title {
   font-size: 35px;
@@ -628,11 +631,10 @@ img.img-fluid.popularpeople-profile {
   object-position: center;
 }
 
-
-@media (max-width:1366px) {
+@media (max-width: 1366px) {
   .footer-list a {
     font-size: 12px;
-}
+  }
   button.faq-open h4 {
     font-size: 21px;
   }
@@ -643,7 +645,7 @@ img.img-fluid.popularpeople-profile {
     width: 24%;
   }
 }
-@media (max-width:1024px) {
+@media (max-width: 1024px) {
   .single-movie-right-side.position-relative h3 {
     font-size: 20px;
   }
@@ -692,15 +694,37 @@ img.img-fluid.popularpeople-profile {
     width: 100px;
   }
 }
-@media (max-width:991px) {
+@media (max-width: 991px) {
+  section.banner {
+    margin-top: 65px;
+  }
+  img.img-fluid.single-movie-img {
+    margin-top: 60px;
+  }
+  img.img-fluid.popularpeople-profile {
+    margin-top: 80px;
+  }
+  nav.navigation.active {
+    display: flex;
+    align-items: center;
+    background-color: #585c5c;
+    left: 0;
+  }
+  #header {
+    width: 100%;
+    position: fixed;
+    z-index: 9999999999999999999999999;
+    top: 0;
+  }
   nav.navigation {
     position: fixed;
     top: 0;
-    left: 0;
+    left: -100%;
     width: 100%;
     background-color: black;
     height: 100vh;
     z-index: 9999999;
+    transition: 0.5s;
   }
   ul.header-ul {
     display: block;
@@ -717,7 +741,7 @@ img.img-fluid.popularpeople-profile {
     font-weight: 400;
     font-family: var(--fonts-family);
     font-size: 10px;
-}
+  }
   .creadits-movie p {
     font-size: 12px;
   }
@@ -745,7 +769,7 @@ img.img-fluid.popularpeople-profile {
   .movies-popup {
     top: -195px;
     left: -210px;
-}
+  }
   .moviesStatus {
     display: flex;
     align-items: center;
@@ -777,17 +801,21 @@ img.img-fluid.popularpeople-profile {
     width: fit-content;
     margin-top: 20px;
   }
-  nav.navigation {
-    display: none;
+  .logo {
+    position: relative;
+    z-index: 99999999999;
+    top: 3%;
   }
-  nav.navigation.active {
-    display: block;
+  button.links.btn.btn-secondary.dropdown-toggle {
+    color: black;
   }
   .menu-btn-area {
     text-align: -webkit-right;
     z-index: 9999999999;
     position: relative;
-}
+    right: 8%;
+    top: 3%;
+  }
   .row.align-items-center {
     justify-content: space-between;
   }
@@ -796,7 +824,7 @@ img.img-fluid.popularpeople-profile {
     margin-bottom: 15px;
   }
 }
-@media (max-width:767px) {
+@media (max-width: 767px) {
   .popularmovies a {
     width: 48%;
   }
@@ -845,6 +873,10 @@ img.img-fluid.popularpeople-profile {
   }
   .trend-movies-sec-title {
     font-size: 30px;
+    margin: 90px 15px 30px 0;
+  }
+  section.trend-movies-sec .trend-movies-sec-title {
+    font-size: 30px;
     margin: 30px 15px 30px 0;
   }
   .tabs {
@@ -852,7 +884,11 @@ img.img-fluid.popularpeople-profile {
     font-size: 12px;
   }
 }
-@media (max-width:480px) {
+@media (max-width: 480px) {
+  .load-more-btn button {
+    padding: 6px 33px;
+    font-size: 13px;
+  }
   .popularmovies a {
     width: 49%;
   }
@@ -870,7 +906,7 @@ img.img-fluid.popularpeople-profile {
     font-weight: 400;
     font-family: var(--fonts-family);
     font-size: 12px;
-}
+  }
   img.img-fluid.popularpeople-profile {
     border-radius: 10px;
     width: 100%;
@@ -895,7 +931,7 @@ img.img-fluid.popularpeople-profile {
   img.img-fluid.single-movie-img {
     aspect-ratio: 1/1;
     margin-bottom: 15px;
-}
+  }
   input.banner-input::placeholder {
     font-size: 13px;
   }
@@ -909,7 +945,7 @@ img.img-fluid.popularpeople-profile {
   .banner {
     background-image: url(/src/images/banner-img.jpg);
     padding: 40px 30px;
-  } 
+  }
   .creaditsMovie-div img {
     height: 220px;
   }
@@ -922,7 +958,7 @@ img.img-fluid.popularpeople-profile {
     margin-top: 0px !important;
   }
 }
-@media (max-width:375px) {
+@media (max-width: 375px) {
   .banner-sb-title {
     font-size: 10px;
   }
@@ -945,7 +981,7 @@ img.img-fluid.popularpeople-profile {
   }
   .acting-list {
     padding: 15px 5px;
-}
+  }
   .moviesStatus {
     justify-content: start;
   }
@@ -973,9 +1009,9 @@ img.img-fluid.popularpeople-profile {
   .genres {
     display: flex;
     flex-wrap: wrap;
+  }
 }
-}
-@media (max-width:320px) {
+@media (max-width: 320px) {
   .trend-movies-sec-title {
     font-size: 23px;
   }

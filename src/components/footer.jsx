@@ -3,6 +3,7 @@ import "../../src/index.css";
 import FooterLogo from "../images/FooterLogo.png";
 import FooterComponent from "./footerData";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const footerData = [
   {
@@ -51,7 +52,9 @@ const Footer = () => {
         <div className="row justify-content-center">
           <div className="col-lg-2 col-6 col-sm-6 col-md-4">
             <div className="firstwidget">
-              <img src={FooterLogo} alt="" className="footer-logo" />
+              <Link to="/">
+                <img src={FooterLogo} alt="" className="footer-logo" />
+              </Link>
               <button className="footer-btn">Hi salmanasif!</button>
             </div>
           </div>

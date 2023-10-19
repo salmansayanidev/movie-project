@@ -4,6 +4,7 @@ import logo from "../images/movie-logo.svg";
 import "../index.css";
 import { Link } from "react-router-dom";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 
@@ -164,7 +165,7 @@ const Header = () => {
               <div className="menu-btn-area">
                 <div className="menu-btn" onClick={handleMenu}>
                   {showMenu ?  (
-                    "close"
+                    <FontAwesomeIcon icon={faXmark} />
                   ) : (
                     <FontAwesomeIcon icon={faBars} />
 
