@@ -7,7 +7,7 @@ const FooterComponent = ({ id, title, itemList, onClick, isOpen }) => {
         <button type="button" className="faq-open" onClick={onClick}>
           <h4>{title}</h4> <i className="fa-solid fa-angle-down"></i>
         </button>
-        <ul key={id} className="dropdownlist">
+        <ul key={title} className="dropdownlist">
           {itemList.map((item) => {
             return (
               <li>

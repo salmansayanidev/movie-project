@@ -72,13 +72,15 @@ const TopRatedTvShows = () => {
                       </Link>
                     ))
                   ) : (
-                    <div className={"item"}>
-                      <Loader
-                        type="spinner-circle"
-                        bgColor={"black"}
-                        color={"black"}
-                        size={150}
-                      />
+                    <div className="col-12">
+                      <div className={"item"}>
+                        <Loader
+                          type="spinner-circle"
+                          bgColor={"black"}
+                          color={"black"}
+                          size={100}
+                        />
+                      </div>
                     </div>
                   )}
                 </div>

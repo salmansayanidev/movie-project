@@ -148,16 +148,14 @@ const TrendingMovies = () => {
                       </SwiperSlide>
                     ))
                   ) : (
-                    <div className="row justify-content-center align-items-center">
-                      <div className="col-3">
-                        <div className={"item"}>
-                          <Loader
-                            type="spinner-circle"
-                            bgColor={"black"}
-                            color={"black"}
-                            size={100}
-                          />
-                        </div>
+                    <div className="col-12">
+                      <div className={"item"}>
+                        <Loader
+                          type="spinner-circle"
+                          bgColor={"black"}
+                          color={"black"}
+                          size={100}
+                        />
                       </div>
                     </div>
                   )}

@@ -53,7 +53,7 @@ const PopularPerson = () => {
                             alt=""
                           />
                           <h1 className="trendmovie-title mt-0">
-                            {popularPerson.name}   
+                            {popularPerson.name}
                           </h1>
                           <p className="release-date mb-0">
                             {popularPerson.id}
@@ -63,13 +63,15 @@ const PopularPerson = () => {
                     </div>
                   ))
                 ) : (
-                  <div className={"item"}>
-                    <Loader
-                      type="spinner-circle"
-                      bgColor={"black"}
-                      color={"black"}
-                      size={150}
-                    />
+                  <div className="col-12">
+                    <div className={"item"}>
+                      <Loader
+                        type="spinner-circle"
+                        bgColor={"black"}
+                        color={"black"}
+                        size={100}
+                      />
+                    </div>
                   </div>
                 )}
               </div>

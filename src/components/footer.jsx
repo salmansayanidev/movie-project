@@ -35,7 +35,7 @@ const footerData = [
       "API Terms of Use",
       "Privacy Policy",
       "DMCA Takedown Request",
-    ],
+    ],   
   },
 ];
 

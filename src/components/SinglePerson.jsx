@@ -25,7 +25,7 @@ const SinglePerson = () => {
 
   return (
     <>
-      <section className="mt-5">
+      <section className="mt-90px">
         <div className="container">
           <div className="row">
             <div className="col-12 col-sm-5 col-md-5 col-lg-3">

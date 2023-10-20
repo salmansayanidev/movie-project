@@ -71,13 +71,15 @@ const AiringToday = () => {
                       </Link>
                     ))
                   ) : (
-                    <div className={"item"}>
+                    <div className="col-12">
+                      <div className={"item"}>
                       <Loader
                         type="spinner-circle"
                         bgColor={"black"}
                         color={"black"}
-                        size={150}
+                        size={100}
                       />
+                    </div>
                     </div>
                   )}
                 </div>
