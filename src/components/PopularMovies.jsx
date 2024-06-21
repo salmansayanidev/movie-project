@@ -7,7 +7,7 @@ import Loader from "react-js-loader";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 
-const PopularMovies = () => {s           
+const PopularMovies = () => {           
   const [popularMovies, setPopularMovies] = useState([]);
   const [page, setPage] = useState(1);
   function pageControl() {
